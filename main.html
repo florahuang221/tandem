@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <title>Tandem</title>
+
+  <style>
+    .button {
+        border: none;
+        color: #1B371D;
+        width: 250px;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+    }
+
+    /* Create three equal columns that floats next to each other */
+    .column {
+        font-family: verdana;
+        float: left;
+        width: 50%;
+        padding: 15px;
+    }
+    
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .list {
+      text-align: left;
+      margin-left: 20px;
+    }
+
+    .group {
+      background-color: #1B371D;
+      padding: 40px;
+      text-align: left;
+      color: lightgray;
+    }
+
+    @media screen and (max-width:600px) {
+      .column {
+        width: 100%;
+      }
+    }
+  </style>
+  
+  <div style="background-color:white; padding: 100px">
+    <h1 style="font-size: 250%; text-align: left; padding:15px;color:#1B371D">Welcome, Anna!</h1>
+    <hr style="width:100%;text-align:left; margin-left:0;color:#1B371D">
+  </div>
+</head>
+<body>
+    <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#config-web-app -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-auth.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCpHvwub4ZGs6Q-Pu1mNao81GjIOtWoeKs",
+        authDomain: "tandem-5325b.firebaseapp.com",
+        projectId: "tandem-5325b",
+        storageBucket: "tandem-5325b.appspot.com",
+        messagingSenderId: "277510832682",
+        appId: "1:277510832682:web:3270af6da6552721a0b953"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+  <p id="user"></p>
+  <p id="user1"></p>
+  <script type="module" src="userinfo.js"></script>
+  <div class="row">
+    <div class="column">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="group"> 
+        <img src="https://sloco.stanford.edu/sites/g/files/sbiybj27201/files/styles/large/public/media/image/grad_image_0.jpg?itok=7wapGOBI" style="width:200px;height:200px;border: 5px solid lightgrey" class="center">
+        <br>
+        <button id='btn' class="button center"><b>Set Status</b></button>
+        <br>
+        <button class="button center"><b>Schedule Meetup</b></button>
+        <script src="button.js"></script>
+        
+      </div>
+      
+    </div>
+    
+    <div class="column">
+      <div class="group"> 
+        <h2>FRIENDS</h2>
+        <p class="list">Flora</p>
+        <p class="list">Joseph</p>
+        <p class="list">Em</p>
+        <p class="list">Naomi</p>
+        <p class="list">Pao</p>
+        <p class="list"><b>+ ADD FRIENDS</b></p>
+      </div>
+      <br>
+      <div class="group"> 
+        <h2>GROUPS</h2>
+        <p class="list">CS 177</p>
+        <p class="list">Trader Joes</p>
+        <p class="list">Beach Bo</p>
+        <p class="list">let's go gym!</p>
+        <p class="list">Study Buddies</p>
+        <p class="list"><b>+ JOIN GROUP</b></p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
